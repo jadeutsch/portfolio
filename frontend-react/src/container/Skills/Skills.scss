@@ -1,0 +1,154 @@
+@forward "src/styles/variables";
+@forward "src/styles/mixins";
+
+@use "src/styles/variables" as v;
+@use "src/styles/mixins" as m;
+
+.skills {
+  &__container {
+    width: 80%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+
+    .skillList {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-right: 5rem;
+      &__item {
+        flex-direction: column;
+        text-align: center;
+        margin: 1rem;
+        transition: all 0.3s ease-in-out;
+
+        div {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          background-color: v.$white;
+
+          img {
+            width: 50%;
+            height: 50%;
+          }
+
+          &:hover {
+            box-shadow: 0 0 25px #fef4f5;
+          }
+
+          @media screen and (min-width: 2000px) {
+            width: 150px;
+            height: 150px;
+          }
+
+          @media screen and (max-width: 450px) {
+            width: 70px;
+            height: 70px;
+          }
+        }
+
+        p {
+          font-weight: 500;
+          margin-top: 0.5rem;
+        }
+
+        @media screen and (min-width: 2000px) {
+          margin: 1rem 2rem;
+
+          p {
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        margin-right: 0;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .expList {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+
+      &__item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 1rem 0;
+
+        .yearPoint {
+          margin-right: 3rem;
+
+          p {
+            font-weight: 800;
+            color: v.$secondary;
+          }
+
+          @media screen and (max-width: 450px) {
+            margin-right: 1rem;
+          }
+        }
+
+        .workPoint {
+          flex: 1;
+
+          &__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            cursor: pointer;
+
+            h4 {
+              font-weight: 800;
+            }
+
+            p {
+              font-weight: 400;
+              color: v.$gray;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        margin-top: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+}
+
+.tooltip {
+  max-width: 300px !important;
+  background-color: v.$white !important;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 5px !important;
+  padding: 1rem !important;
+  color: v.$gray !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+  opacity: 1 !important;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.75rem !important;
+    max-width: 500px !important;
+    line-height: 2 !important;
+  }
+}
