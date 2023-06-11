@@ -9,11 +9,9 @@
   },
   "plugins": [
     "@sanity/base",
-    "@sanity/dashboard",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
-    "dashboard-widget-netlify"
+    "@sanity/desk-tool"
   ],
   "env": {
     "development": {
@@ -24,10 +22,6 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
-    },
-    {
-      "implements": "part:@sanity/dashboard/config",
-      "path": "./src/dashboardConfig.js"
     }
   ]
 }
