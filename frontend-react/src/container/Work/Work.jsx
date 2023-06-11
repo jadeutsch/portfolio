@@ -38,7 +38,7 @@ const Work = () => {
         My <span>Projects</span>
       </h2>
       <div className="work__filter">
-        {["UI/UX", "Web App", "Mobile Apps", "ReactJS", "All"].map((item, index) => (
+        {["UI/UX", "Web Apps", "Mobile Apps", "All"].map((item, index) => (
           <div
             className={`filterItem flex pText ${activeFilter === item ? "filterItem--active" : ""}`}
             key={index}
